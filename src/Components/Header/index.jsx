@@ -11,16 +11,23 @@ function Header() {
         setActive(false)
     }, [pathname])
 
+    if (active) {
+        document.body.style.overflow = 'hidden';
+    }
+    else {
+        document.body.style.overflow = 'auto';  
+    }
+
     return (
         <>
-            <div className="flex flex-col">
-                <div className="flex items-center justify-between px-14 py-4 bg-primaryColor">
+            <div className="flex flex-col items-center">
+                <div className="flex items-center justify-between px-14 py-4 bg-primaryColor w-full max-w-screen-xl flex-1">
                     <h1 className="text-white text-4xl font-bold">ACP</h1>
-                    <div className="z-10">
+                    <div className="z-50">
                         <MenuButton onClick={() => setActive((prev) => !prev)} active={active} color={active ? 'black' : 'white'} />
                     </div>
                 </div>
-                <div className={`absolute -top-full ${active ? "translate-y-full" : ""} transition-all duration-700 z-0`}>
+                <div className={`absolute ${active ? "top-0" : "-top-full"} transition-all duration-700 z-40`}>
                     <Menu />
                 </div>
             </div>

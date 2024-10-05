@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Menu() {
     return ( 
-        <div className="bg-secondaryColor flex items-center justify-center max-h-screen h-screen w-screen z-0 relative overflow-hidden">
+        <div className="bg-secondaryColor flex items-center justify-center max-h-screen h-screen w-screen relative overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between items-center z-0 absolute w-full text-center md:-bottom-20 leading-none text-black/20 md:text-black/40">
                 <div><span className="font-bold text-[25vh] md:text-[25vw]">M</span></div>
                 <div><span className="font-bold text-[25vh] md:text-[25vw]">E</span></div>

@@ -4,10 +4,10 @@ import Typewriter from 'typewriter-effect';
 function Home() {
     return (
         <>
-            <div className='flex flex-col md:flex-row items-center justify-center gap-10 flex-1'>
+            <div className='flex flex-col md:flex-row items-center justify-center gap-10 flex-1 px-14 max-w-screen-xl  mx-auto'>
                 <div className='flex flex-col gap-10'>
                     <div className='flex flex-col gap-3'>
-                        <h1 className='text-3xl text-secondaryColor font-bold'>Olá! Me chamo <span className='text-hlColor'>Arthur</span></h1>
+                        <h1 className='text-3xl text-secondaryColor font-bold'>Olá! Me chamo <span className='text-hlColor drop-shadow'>Arthur</span></h1>
                         <div className='text-secondaryColor font-bold text-xl'>
                             <Typewriter
                             options={{

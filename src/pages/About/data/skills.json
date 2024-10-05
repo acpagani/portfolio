@@ -69,13 +69,13 @@
         "id": 12,
         "skillName": "SQL",
         "skillCategory": "DB",
-        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original-wordmark.svg"
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
     },
     {
         "id": 13,
         "skillName": "SQLite",
         "skillCategory": "DB",
-        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original-wordmark.svg"
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
     },
     {
         "id": 14,

@@ -9,6 +9,7 @@ export default {
       colors: {
         primaryColor: "#282828",
         secondaryColor: "#F2F2F0",
+        terciaryColor: "#353535",
         hlColor: "#21A5D1"
       },
       fontFamily: {
