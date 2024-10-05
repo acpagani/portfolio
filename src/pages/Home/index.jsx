@@ -1,7 +1,23 @@
+import { useState } from 'react';
+import { FaCheck, FaDownload } from 'react-icons/fa';
+import { GoCopy } from 'react-icons/go';
+import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 
 
 function Home() {
+
+    const [isCopied, setIsCopied] = useState(false)
+
+    const copyPath = () => {
+        navigator.clipboard.writeText('https://arthurvsn.github.io/')
+        setIsCopied(true)
+        alert('Link copiado para a área de transferência!')
+        setTimeout(() => {
+            setIsCopied(false)
+        }, 4000)   
+    }
+
     return (
         <>
             <div className='flex flex-col md:flex-row items-center justify-center gap-10 flex-1 px-14 max-w-screen-xl  mx-auto'>
@@ -20,22 +36,36 @@ function Home() {
                         </div>
                     </div>
                     <div className='flex flex-col gap-5'>
-                        <div className='flex gap-5'>
-                            <button className='py-3 bg-hlColor text-white font-bold px-4 rounded-md basis-1/2'>
+                            <Link to="/about" className='flex items-center justify-center py-3 bg-hlColor text-white font-bold px-4 rounded-md'>
                                 Saiba Mais
-                            </button>
-                            <button className='py-3 bg-hlColor text-white font-bold px-4 rounded-md basis-1/2'>
-                                Entre em contato!
-                            </button>
-                        </div>
-                        <button  utton className='py-3 bg-hlColor text-white font-bold px-4 rounded-md'>Compartilhar</button>
+                            </Link>
+                            <div className='flex flex-wrap items-center gap-5'>
+                                <button 
+                                    className='flex flex-1 gap-3 items-center justify-center py-3 bg-hlColor text-white font-bold px-4 rounded-md'
+                                    onClick={() => {
+                                        const link = document.createElement('a')
+                                        link.href = '/assets/docs/curriculo.pdf'
+                                        link.download = 'curriculo.pdf'
+                                        document.body.appendChild(link)
+                                        link.click()
+                                        document.body.removeChild(link)
+                                    }}
+                                >
+                                    Currículo
+                                    <FaDownload/>
+                                </button>
+                                <button className='flex flex-1 gap-3 items-center justify-center py-3 bg-hlColor text-white font-bold px-4 rounded-md' onClick={copyPath}>
+                                    Compartilhar
+                                    {isCopied ? <FaCheck /> : <GoCopy />}
+                                </button>
+                            </div>
                     </div>
                 </div>
                 <div className='p-4 bg-secondaryColor rounded-full'>
                     <img 
                         src="/assets/images/myOctocat.png" 
                         alt="My Octocat"
-                        className='size-60' />
+                        className='size-60 max-sm:size-40' />
                 </div>
             </div>
         </>

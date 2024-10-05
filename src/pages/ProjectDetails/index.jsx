@@ -13,7 +13,7 @@ function ProjectDetails() {
 
     return ( 
         <>
-        <div className="flex w-full max-w-screen-xl mx-auto px-14 justify-start mb-3">
+        <div className="flex w-full max-w-screen-xl mx-auto px-14 justify-start mb-3 flex-1">
             <Link to="/projects" className="group text-secondaryColor text-base font-bold flex items-center gap-2 p-2 rounded-lg hover:bg-terciaryColor transition-all">
             <IoCaretBack className="group-hover:-translate-x-1 transition-transform"/>
             Voltar</Link>
@@ -33,7 +33,10 @@ function ProjectDetails() {
             <div className="w-full flex flex-col gap-5">
                 <div className="flex flex-col gap-5">
                     <h2 className="text-secondaryColor text-xl font-bold">Descrição</h2>
-                    <p className="text-secondaryColor text-base">{projeto.description}</p>
+                    <div className="flex flex-col gap-2 max-w-prose">
+                        <p className="text-secondaryColor text-lg">{projeto.intro}</p>
+                        <p className="text-secondaryColor text-base">{projeto.description}</p>
+                    </div>
                 </div>
                 <div className="flex flex-col gap-5">
                     <h2 className="text-secondaryColor text-xl font-bold">Tecnologias</h2>

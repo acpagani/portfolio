@@ -11,7 +11,7 @@ function About() {
 
     return ( 
         <>
-            <div className='flex flex-col gap-10 px-14 w-full max-w-screen-xl mx-auto'>
+            <div className='flex flex-col gap-10 px-14 w-full max-w-screen-xl mx-auto flex-1'>
                 <div className="flex">
                     <div className="flex flex-col gap-5">
                         <h1 className="text-secondaryColor text-2xl font-bold text-center">Quem sou <span className='text-hlColor'>eu</span>?</h1>
