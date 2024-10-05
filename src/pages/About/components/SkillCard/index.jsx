@@ -1,7 +1,7 @@
 function SkillCard({ skillName, skillIcon }) {
     return ( 
         <>
-            <div className="flex flex-col gap-1 bg-secondaryColor items-center justify-center">
+            <div className="flex flex-col gap-1 bg-inherit items-center justify-center">
                 <img 
                     src={skillIcon} 
                     alt={`${skillName} icon`} 
