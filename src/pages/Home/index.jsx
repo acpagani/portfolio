@@ -10,7 +10,7 @@ function Home() {
     const [isCopied, setIsCopied] = useState(false)
 
     const copyPath = () => {
-        navigator.clipboard.writeText('https://arthurvsn.github.io/')
+        navigator.clipboard.writeText('https://me-acp.vercel.app/')
         setIsCopied(true)
         alert('Link copiado para a área de transferência!')
         setTimeout(() => {
