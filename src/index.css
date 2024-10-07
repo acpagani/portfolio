@@ -5,3 +5,17 @@
 .active {
     text-decoration: underline;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 0px;
+    background-color: #282828;
+  }
+
+
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #353535;
+    border-radius: 8px;
+  }
