@@ -9,16 +9,16 @@ function Footer() {
                 <p className="text-secondaryColor font-bold text-sm text-center">Arthur Cotrick Pagani &copy; 2024</p>
                 <ul className="flex text-secondaryColor font-bold text-base gap-10">
                     <li>
-                        <a href="https://github.com/acpagani" target="_blank"><FaGithub className="size-7 fill-hlColor"/></a>
+                        <a href="https://github.com/acpagani" target="_blank"><FaGithub className="size-7 fill-hlColor hover:fill-secondaryColor transition-colors"/></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/arthur-pagani/" target="_blank"><FaLinkedin className="size-7 fill-hlColor"/></a>
+                        <a href="https://www.linkedin.com/in/arthur-pagani/" target="_blank"><FaLinkedin className="size-7 fill-hlColor hover:fill-secondaryColor transition-colors"/></a>
                     </li>
                     <li>
-                        <a href="mailto:arthurpagani00@gmail.com" target="_blank"><SiGmail className="size-7 fill-hlColor"/></a>
+                        <a href="mailto:arthurpagani00@gmail.com" target="_blank"><SiGmail className="size-7 fill-hlColor hover:fill-secondaryColor transition-colors"/></a>
                     </li>
                     <li>
-                        <a href="https://wa.me/5511947498366/" target="_blank"><FaWhatsapp className="size-7 fill-hlColor"/></a>
+                        <a href="https://wa.me/5511947498366/" target="_blank"><FaWhatsapp className="size-7 fill-hlColor hover:fill-secondaryColor transition-colors"/></a>
                     </li>
                 </ul>
             </div>

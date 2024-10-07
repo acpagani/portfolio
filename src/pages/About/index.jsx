@@ -15,14 +15,20 @@ function About() {
                 <div className="flex">
                     <div className="flex flex-col gap-5">
                         <h1 className="text-secondaryColor text-2xl font-bold text-center">Quem sou <span className='text-hlColor'>eu</span>?</h1>
-                        <div >
-                            <p className="text-secondaryColor">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias  rerum cupiditate mollitia quibusdam, quia culpa quos laboriosam  libero tempora facere unde maxime odio nisi veniam amet quidem   ipsum, enim debitis.
-                            </p>
+                        <div className='flex flex-col md:flex-row'>
+                            <div className='flex flex-col max-w-prose gap-3'>
+                                <p className="text-secondaryColor">
+                                    Muito prazer! Me chamo <span className='text-hlColor font-bold'>Arthur Cotrick Pagani</span>, sou um jovem de 18 anos com uma paixão imensa por tecnologia e programação. Atualmente, estou cursando o 2º semestre de Engenharia de Software na Faculdade de Informática e Administração Paulista (<span className='text-hlColor font-bold'>FIAP</span>).
+                                </p>
+                                <p className='text-secondaryColor'>
+                                    Desde pequeno, sempre fui apaixonado por <span className='text-hlColor font-bold'>computadores e tecnologia</span>. Aos <span className='text-hlColor font-bold'>14 anos</span>, comecei a me interessar pela programação e fiz meu primeiro curso de <span className='text-hlColor font-bold'>Python</span>, e desde então, venho estudando e me aprimorando cada vez mais.
+                                </p>
+                                <p className='text-secondaryColor'>
+                                    Além disso, sou apaixonado por esportes, jogo <span className='text-hlColor font-bold'>vôlei</span> aos finais de semana e sou um grande fã do mundo dos <span className='text-hlColor font-bold'>E-Sports</span>.
+                                </p>
+                            </div>
+                            <img src="" alt="" />
                         </div>
-                    </div>
-                    <div>
-                        <img src="" alt="" />
                     </div>
                 </div>
                 <div className='flex flex-col gap-5'>

@@ -13,7 +13,7 @@ function ProjectDetails() {
 
     return ( 
         <>
-        <div className="flex w-full max-w-screen-xl mx-auto px-14 justify-start mb-3 flex-1">
+        <div className="flex w-full max-w-screen-xl mx-auto px-14 justify-start items-center mb-3 flex-1">
             <Link to="/projects" className="group text-secondaryColor text-base font-bold flex items-center gap-2 p-2 rounded-lg hover:bg-terciaryColor transition-all">
             <IoCaretBack className="group-hover:-translate-x-1 transition-transform"/>
             Voltar</Link>
