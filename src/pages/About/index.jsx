@@ -26,7 +26,7 @@ function About() {
                                 Além disso, sou apaixonado por esportes, jogo <span className='text-hlColor font-bold'>vôlei</span> aos finais de semana e sou um grande fã do mundo dos <span className='text-hlColor font-bold'>E-Sports</span>.
                             </p>
                         </div>
-                        <div className='bg-secondaryColor rounded-full min-w-52'>
+                        <div className='bg-secondaryColor rounded-full min-w-52 min-h-52 size-60 max-sm:size-40 max-sm:min-w-36 max-sm:min-h-36 '>
                             <img 
                                 src="/assets/images/me.png" 
                                 alt="Me"

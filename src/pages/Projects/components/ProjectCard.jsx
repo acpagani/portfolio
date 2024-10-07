@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-function ProjectCard({ id, name, subtitle, imageUrl}) {
+function ProjectCard({ id, name, subtitle, imageUrlBanner }) {
     return ( 
         <div className="flex flex-col flex-1 bg-terciaryColor min-w-56 max-w-96 rounded-xl gap-5">
             <img 
-            src={imageUrl} alt="" 
+            src={imageUrlBanner} alt="" 
             className="w-full basis-1/2 object-cover rounded-xl"/>
             <div className="flex flex-col gap-3 px-4 pb-5">
                 <div className="flex flex-col gap-1 items-start">
