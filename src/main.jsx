@@ -7,11 +7,11 @@ import {
 } from "react-router-dom";
 import App from './App';
 import Home from './pages/Home';
-import Menu from './pages/Menu';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
+import ProjectDetails from './pages/ProjectDetails';
 
 const router = createBrowserRouter([
   {
@@ -19,10 +19,10 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       {index: true, element: <Home/>},
-      {path: 'menu', element: <Menu/>},
-      {path: 'about', element: <About/>},
-      {path: 'projects', element: <Projects/>},
-      {path: 'contact', element: <Contact/>},
+      {path: '/about', element: <About/>},
+      {path: '/projects', element: <Projects/>},
+      {path: '/projects/:id', element: <ProjectDetails/>},
+      {path: '/contact', element: <Contact/>},
       {path: '*', element: <PageNotFound/>}
     ]
   }
