@@ -8,7 +8,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { MdArrowLeft, MdArrowRight } from "react-icons/md";
 
-function ProjectDetails() {
+export default function ProjectDetails() {
 
     const { id } = useParams();
 
@@ -138,5 +138,3 @@ function ProjectDetails() {
         </>
     );
 }
-
-export default ProjectDetails;

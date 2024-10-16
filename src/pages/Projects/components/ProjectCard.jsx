@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ProjectCard({ id, name, subtitle, imageUrlBanner }) {
+export default function ProjectCard({ id, name, subtitle, imageUrlBanner }) {
     return ( 
         <div className="flex flex-col flex-1 bg-terciaryColor min-w-56 max-w-96 rounded-xl gap-5">
             <img 
@@ -18,5 +18,3 @@ function ProjectCard({ id, name, subtitle, imageUrlBanner }) {
         </div>
      );
 }
-
-export default ProjectCard;

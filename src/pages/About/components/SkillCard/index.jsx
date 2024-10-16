@@ -1,4 +1,4 @@
-function SkillCard({ skillName, skillIcon }) {
+export default function SkillCard({ skillName, skillIcon }) {
     return ( 
         <>
             <div className="flex flex-col gap-1 bg-inherit items-center justify-center">
@@ -11,5 +11,3 @@ function SkillCard({ skillName, skillIcon }) {
         </>
      );
 }
-
-export default SkillCard;

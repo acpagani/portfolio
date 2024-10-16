@@ -1,4 +1,4 @@
-function PageNotFound() {
+export default function PageNotFound() {
     return ( 
         <div className="flex flex-col gap-10 items-center justify-center flex-1 w-full max-w-screen-xl mx-auto px-14">
             <h1 className="text-secondaryColor text-2xl font-bold text-center"><span className="text-hlColor">404 </span>Página não encontrada</h1>
@@ -12,5 +12,3 @@ function PageNotFound() {
         </div>
      );
 }
-
-export default PageNotFound;

@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-function Footer() {
+export default function Footer() {
     return ( 
         <>
         <div className="w-full flex items-center justify-center bg-terciaryColor py-5 mt-10">
@@ -26,5 +26,3 @@ function Footer() {
         </>
      );
 }
-
-export default Footer;

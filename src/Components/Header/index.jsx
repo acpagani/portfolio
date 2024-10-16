@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MenuButton } from "../MenuButton";
 import Menu from "../Menu";
 
-function Header() {
+export default function Header() {
     const [active, setActive] = useState(false)
     const { pathname } = useLocation();
 
@@ -22,7 +22,7 @@ function Header() {
         <>
             <div className="flex flex-col items-center">
                 <div className="flex items-center justify-between px-14 py-4 bg-primaryColor w-full max-w-screen-xl flex-1">
-                    <h1 className="text-white text-4xl font-bold">ACP</h1>
+                    <Link to={"/"} className="text-white text-4xl font-bold">ACP</Link>
                     <div className="z-50">
                         <MenuButton onClick={() => setActive((prev) => !prev)} active={active} color={active ? 'black' : 'white'} />
                     </div>
@@ -35,5 +35,3 @@ function Header() {
         </>
     );
 }
-
-export default Header;

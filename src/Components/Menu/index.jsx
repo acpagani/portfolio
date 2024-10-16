@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function Menu() {
+export default function Menu() {
     return ( 
         <div className="bg-secondaryColor flex items-center justify-center max-h-screen h-screen w-screen relative overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between items-center z-0 absolute w-full text-center md:-bottom-20 leading-none text-black/20 md:text-black/40">
@@ -19,5 +19,3 @@ function Menu() {
 
      );
 }
-
-export default Menu;

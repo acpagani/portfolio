@@ -3,7 +3,7 @@ import SkillCard from './components/SkillCard';
 import SkillCategory from './components/SkillCategory';
 import skills from './data/skills.json'
 
-function About() {
+export default function About() {
     const temaGithub = {
         light: ['#151B23', '#178FB4', '#21A5D1', '#49B7DA', '#72C8E3'],
         dark: ['#151B23', '#12576E', '#1B85A8', '#1E95BD', '#29C9FF'],
@@ -87,5 +87,3 @@ function About() {
         </>
      );
 }
-
-export default About;

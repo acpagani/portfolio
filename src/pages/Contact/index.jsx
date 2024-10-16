@@ -1,14 +1,46 @@
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import emailjs from '@emailjs/browser';
+import { useState } from "react";
+import Loader from "./components/Loader";
 
-function Contact() {
+export default function Contact() {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [message, setMessage] = useState("")
+    const [requestStatus, setRequestStatus] = useState(false)
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        const formData = new FormData(e.target)
-        for (let [key, value] of formData.entries()) {
-            console.log(`${key}: ${value}`)
+
+        if (name === "" || email === "" || message === "") {
+            alert("Preencha todos os campos!")
+            return
         }
-        alert("Mensagem enviada com sucesso!")
+
+        const templateParams = {
+            from_name: name,
+            email: email,
+            message: message
+        }
+        
+        console.log(templateParams)
+        setRequestStatus(true)
+        emailjs.send("service_198kdyd", "template_4333qx7", templateParams, "zR4GwwkWnKRSW7OWV")
+        .then((response) => {
+            alert("Mensagem enviada com sucesso!", response.status, response.text)
+            setName("")
+            setEmail("")
+            setMessage("")
+            setRequestStatus(false)
+
+        }, (err) => {
+            alert("Erro ao enviar mensagem!", err)
+            setName("")
+            setEmail("")
+            setMessage("")
+            setRequestStatus(false)
+        })
     }
 
     return ( 
@@ -29,13 +61,33 @@ function Contact() {
                 </li>
             </ul>
             <form className="flex flex-col gap-5 w-full sm:max-w-80" onSubmit={handleSubmit}>
-                <input type="text" placeholder="Nome" name="nome" className="border-2 border-secondaryColor caret-hlColor focus:outline-hlColor rounded-md p-2 "/>
-                <input type="email" placeholder="E-mail" name="email" className="border-2 border-secondaryColor focus:outline-hlColor rounded-md p-2"/>
-                <textarea placeholder="Mensagem" name="mensagem" className="border-2 border-secondaryColor focus:outline-hlColor rounded-md p-2"></textarea>
-                <button type="submit" className="bg-hlColor text-white font-bold py-2 rounded-md hover:bg-secondaryColor hover:text-hlColor transition-colors">Enviar</button>
+                <input 
+                    type="text" 
+                    placeholder="Nome" 
+                    name="name" 
+                    className="border-2 border-secondaryColor caret-hlColor focus:outline-hlColor rounded-md p-2"
+                    onChange={(e) => {setName(e.target.value)}}
+                    value={name}/>
+                <input 
+                    type="email" 
+                    placeholder="E-mail" 
+                    name="email" 
+                    className="border-2 border-secondaryColor focus:outline-hlColor rounded-md p-2"
+                    onChange={(e) => {setEmail(e.target.value)}}
+                    value={email}/>
+                <textarea 
+                    placeholder="Mensagem" 
+                    name="message" 
+                    className="border-2 border-secondaryColor focus:outline-hlColor rounded-md p-2"
+                    onChange={(e) => {setMessage(e.target.value)}}
+                    value={message}></textarea>
+                <button 
+                    type="submit" 
+                    className="bg-hlColor text-white font-bold h-14 rounded-md hover:bg-secondaryColor hover:text-hlColor transition-colors flex items-center justify-center" 
+                    disabled={requestStatus}>
+                        {requestStatus ? <Loader/> : "Enviar"}
+                </button>
             </form>
         </div>
     );
 }
-
-export default Contact;

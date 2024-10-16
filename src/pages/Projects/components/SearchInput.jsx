@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { BiSolidSearch } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 
-function SearchInput({ onChange }) {
+export default function SearchInput({ onChange }) {
 
     const [active, setActive] = useState(false)
 
@@ -76,5 +76,3 @@ function SearchInput({ onChange }) {
         </MotionConfig>
      );
 }
-
-export default SearchInput;

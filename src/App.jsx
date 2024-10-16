@@ -2,7 +2,7 @@ import { Outlet } from 'react-router'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 
-function App() {
+export default function App() {
 
   return (
     <>
@@ -13,4 +13,3 @@ function App() {
   )
 }
 
-export default App
