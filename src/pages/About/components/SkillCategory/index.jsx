@@ -1,4 +1,4 @@
-function SkillCategory({ titulo, children }) {
+export default function SkillCategory({ titulo, children }) {
     return ( 
         <>
             <div className="flex flex-col gap-3 bg-secondaryColor p-5 shadow-md shadow-secondaryColor select-none">
@@ -12,5 +12,3 @@ function SkillCategory({ titulo, children }) {
         </>
      );
 }
-
-export default SkillCategory;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 
 
-function Home() {
+export default function Home() {
 
     const [isCopied, setIsCopied] = useState(false)
 
@@ -71,5 +71,3 @@ function Home() {
         </>
     )
 }
-
-export default Home;

@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { useState } from "react";
 import Loader from "./components/Loader";
 
-function Contact() {
+export default function Contact() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
@@ -91,5 +91,3 @@ function Contact() {
         </div>
     );
 }
-
-export default Contact;

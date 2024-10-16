@@ -3,7 +3,7 @@ import SearchInput from "./components/SearchInput";
 import projetos from "./data/projects.json"
 import ProjectCard from "./components/ProjectCard";
 
-function Projects() {
+export default function Projects() {
 
     const [search, setSearch] = useState('')
 
@@ -35,5 +35,3 @@ function Projects() {
         </>
      );
 }
-
-export default Projects;

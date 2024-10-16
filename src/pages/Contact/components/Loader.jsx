@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-function Loader() {
+export default function Loader() {
 
     const LoadingDot = {
         display: "block",
@@ -73,5 +73,3 @@ function Loader() {
         </motion.div>
      );
 }
-
-export default Loader;
