@@ -2,7 +2,9 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import emailjs from '@emailjs/browser';
 import { useState } from "react";
-import Loader from "./components/Loader";
+import { bouncy } from 'ldrs'
+
+bouncy.register()
 
 export default function Contact() {
     const [name, setName] = useState("")
@@ -26,6 +28,7 @@ export default function Contact() {
         
         console.log(templateParams)
         setRequestStatus(true)
+
         emailjs.send("service_198kdyd", "template_4333qx7", templateParams, "zR4GwwkWnKRSW7OWV")
         .then((response) => {
             alert("Mensagem enviada com sucesso!", response.status, response.text)
@@ -83,9 +86,18 @@ export default function Contact() {
                     value={message}></textarea>
                 <button 
                     type="submit" 
-                    className="bg-hlColor text-white font-bold h-14 rounded-md hover:bg-secondaryColor hover:text-hlColor transition-colors flex items-center justify-center" 
+                    className="bg-hlColor text-white font-bold h-12 rounded-md hover:bg-secondaryColor hover:text-hlColor transition-colors flex items-center justify-center disabled:bg-hlColor disabled:opacity-70" 
                     disabled={requestStatus}>
-                        {requestStatus ? <Loader/> : "Enviar"}
+                        {
+                            requestStatus ? 
+                            <l-bouncy
+                            size="45"
+                            speed="1.75" 
+                            color="#F2F2F0" 
+                            ></l-bouncy> 
+                            : 
+                            "Enviar"
+                        }
                 </button>
             </form>
         </div>
