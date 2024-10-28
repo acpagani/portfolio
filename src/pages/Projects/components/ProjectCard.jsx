@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function ProjectCard({ id, name, subtitle, imageUrlBanner }) {
     return ( 
-        <div className="flex flex-col flex-1 bg-terciaryColor min-w-56 max-w-96 rounded-xl gap-5">
+        <div className="flex flex-col flex-1 bg-terciaryColor min-w-52 md:min-w-72 max-w-96 rounded-xl gap-5">
             <img 
             src={imageUrlBanner} alt="" 
             className="w-full basis-1/2 object-cover rounded-xl"/>

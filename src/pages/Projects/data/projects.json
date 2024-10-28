@@ -3,7 +3,7 @@
         "id": 1,
         "name": "E-WAY",
         "skills": [
-            1, 2, 4, 5, 7, 15
+            1, 2, 4, 5, 7, 14, 15
         ],
         "institution": "FIAP",
         "institutionImage": "/assets/images/fiapLogo.png",
@@ -17,13 +17,14 @@
         "subtitle": "HUB de informações da Fórmula E",
         "intro": "A E-WAY é um HUB de informações completo e moderno totalmente dedicado à Fórmula E.",
         "description": "A intenção da plataforma é realizar uma imersão completa do usuário no universo da modalidade, mostrando-o que este esporte, além de ser referência em inúmeros marcos sustentáveis, também é repleto de emoção e adrenalina.A plataforma conta com uma seção informativa, onde o usuário pode encontrar notícias atualizadas sobre a Fórmula, um sistema gamificado com pontuações e colecionáveis, e, com a finalidade de prestar suporte ao usuário a qualquer hora, temos a VoltAI, a nossa Inteligência Artificial completamente especializada em Fórmula E. A E-WAY é o projeto fruto do Challenge de 2024 da FIAP realizado em parceria à Tech Mahindra.",
-        "link": "https://the-eway.vercel.app/"
+        "link": "https://the-eway.vercel.app/",
+        "githubLink": "https://github.com/ulipese/eway"
     },
     {
         "id": 2,
         "name": "BuilData",
         "skills": [
-            1, 2, 3, 6, 8, 9, 12, 13, 15
+            1, 2, 3, 6, 8, 9, 12, 13, 14, 15
         ],
         "institution": "Harvard",
         "institutionImage": "/assets/images/harvardLogo.png",
@@ -37,13 +38,14 @@
         "subtitle": "Gerenciador de obras",
         "intro": "BuilData é um Aplicação Web que funciona como um gerenciador de obras, realizado como meu Projeto Final do curso CS50x: Harvard's Introduction to Computer Science.",
         "description": "Dentro do sistema, os gerentes de obras têm um controle muito maior sobre suas respectivas equipes e construções em andamento. Lá, é possível ter uma visão macro de todo o complexo de obras, assim como a relação de funcionário alocado por obra. Além de tudo isso, o sistema também conta com uma mecânica de postagens de atualizações, na qual o gerente pode informar ao seu cliente as modificações do dia ocorridas em sua obra.",
-        "link": "https://github.com/acpagani/cs50-project"
+        "link": "",
+        "githubLink": "https://github.com/acpagani/cs50-project"
     },
     {
         "id": 3,
         "name": "ReciclaMar",
         "skills": [
-            1, 2, 3, 8, 15
+            1, 2, 3, 8, 14, 15
         ],
         "institution": "FIAP",
         "institutionImage": "/assets/images/fiapLogo.png",
@@ -55,6 +57,25 @@
         "subtitle": "Rastreamento de resíduos",
         "intro": "O projeto ReciclaMar provoca a conscientização sustentável por parte de grandes empresas produtoras de resíduos.",
         "description": "Idealizado e desenvolvido para a Global Solution do primeiro semestre de 2024 - A \"Blue Future\" - o RM se baseia na ideia da rastreabilidade de produtos por meio de tokens alocados em Blockchain e etiquetas RFID em cada unidade, a fim de manter as empresas sempre vinculadas aos produtos que ela lança ao mercado consumidor. A rastreabilidade terá duas finalidades: Indicar quando o produto é produzido e quando é reciclado, ou seja, ocorre uma validação da etiqueta durante sua produção e quando chega a um centro de reciclagem. E, a partir destes dados, introduziremos um novo índice ao mercado: o IRC - Índice de Reciclabilidade. Cada empresa terá seu próprio índice e, a partir do mesmo, virão os selos verdes, categorizados de acordo com o valor do IRC respectivo da empresa.",
-        "link": "https://vitor-chaves-lima.github.io/global-solution-blue-future/src/home/"
+        "link": "https://vitor-chaves-lima.github.io/global-solution-blue-future/src/home/",
+        "githubLink": "https://github.com/vitor-chaves-lima/global-solution-blue-future"
+    },
+    {
+        "id": 4,
+        "name": "Clone Airbnb",
+        "skills": [
+            1, 2, 3, 14
+        ],
+        "institution": "FIAP",
+        "institutionImage": "/assets/images/fiapLogo.png",
+        "imageUrlBanner": "/assets/images/airbnbBanner.png",
+        "imageUrls": [
+            "/assets/images/airbnb/airbnb1.png"
+        ],
+        "subtitle": "Clone de um dos anúncios do Airbnb",
+        "intro": "O projeto foi desenvolvido durante a disciplina de Front-End Design da FIAP.",
+        "description": "O projeto consiste em um clone de um dos anúncios do Airbnb, com o objetivo de treinar minhas habilidades em front-end, como HTML, CSS e Javascript. O projeto também conta com um design responsivo, para que possa ser visualizado de forma adequada em qualquer dispositivo.",
+        "link": "https://acpagani.github.io/clone-airbnb/",
+        "githubLink": "https://github.com/acpagani/clone-airbnb"
     }
 ]
