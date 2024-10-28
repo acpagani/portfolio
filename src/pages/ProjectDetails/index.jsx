@@ -126,12 +126,20 @@ export default function ProjectDetails() {
                             }
                         </div>
                     </div>
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col md:flex-row gap-5">
                         <a 
-                            href={projeto.link} 
+                            href={projeto.githubLink} 
                             target="_blank" 
                             rel="noreferrer"
-                            className="flex items-center gap-3 text-2xl font-bold text-secondaryColor">Projeto <RiShareBoxLine/></a>
+                            className="flex items-center gap-3 text-2xl font-bold text-secondaryColor">GitHub <RiShareBoxLine/></a>
+                        
+                        {projeto.link &&
+                          <a 
+                          href={projeto.link} 
+                          target="_blank" 
+                          rel="noreferrer"
+                          className="flex items-center gap-3 text-2xl font-bold text-secondaryColor">Projeto <RiShareBoxLine/></a>}
+                        
                     </div>
                 </div>
             </div>

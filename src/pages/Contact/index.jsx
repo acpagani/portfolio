@@ -64,26 +64,37 @@ export default function Contact() {
                 </li>
             </ul>
             <form className="flex flex-col gap-5 w-full sm:max-w-80" onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="Nome" 
-                    name="name" 
-                    className="border-2 border-secondaryColor caret-hlColor focus:outline-hlColor rounded-md p-2"
-                    onChange={(e) => {setName(e.target.value)}}
-                    value={name}/>
-                <input 
-                    type="email" 
-                    placeholder="E-mail" 
-                    name="email" 
-                    className="border-2 border-secondaryColor focus:outline-hlColor rounded-md p-2"
-                    onChange={(e) => {setEmail(e.target.value)}}
-                    value={email}/>
-                <textarea 
-                    placeholder="Mensagem" 
-                    name="message" 
-                    className="border-2 border-secondaryColor focus:outline-hlColor rounded-md p-2"
-                    onChange={(e) => {setMessage(e.target.value)}}
-                    value={message}></textarea>
+                <div className="flex flex-col gap-1">
+                    <label className="font-bold text-secondaryColor" htmlFor="name">Nome</label>
+                    <input 
+                        id="name"
+                        type="text" 
+                        placeholder="" 
+                        name="name" 
+                        className="border-2 border-secondaryColor caret-hlColor text-hlColor focus:outline-hlColor rounded-md p-2"
+                        onChange={(e) => {setName(e.target.value)}}
+                        value={name}/>
+                </div>
+                <div className="flex flex-col gap-1">
+                    <label className="font-bold text-secondaryColor" htmlFor="email">E-mail</label>
+                    <input 
+                        id="email"
+                        type="email" 
+                        placeholder="voce@exemplo.com" 
+                        name="email" 
+                        className="border-2 border-secondaryColor text-hlColor focus:outline-hlColor rounded-md p-2 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:outline-pink-500"
+                        onChange={(e) => {setEmail(e.target.value)}}
+                        value={email}/>
+                </div>
+                <div className="flex flex-col gap-1">
+                    <label className="font-bold text-secondaryColor" htmlFor="message">Mensagem</label>
+                    <textarea 
+                        id="message"
+                        name="message" 
+                        className="border-2 border-secondaryColor text-hlColor focus:outline-hlColor rounded-md p-2"
+                        onChange={(e) => {setMessage(e.target.value)}}
+                        value={message}></textarea>
+                </div>
                 <button 
                     type="submit" 
                     className="bg-hlColor text-white font-bold h-12 rounded-md hover:bg-secondaryColor hover:text-hlColor transition-colors flex items-center justify-center disabled:bg-hlColor disabled:opacity-70" 
