@@ -9,7 +9,7 @@ export default function Projects() {
 
     const projetosFiltrados = projetos.filter( projeto => (
         projeto.name.toLowerCase().includes(search.toLowerCase())
-    ))
+    )).reverse();
 
     return ( 
         <>
@@ -19,7 +19,7 @@ export default function Projects() {
                 <div className="flex items-center justify-end md:justify-center border-b-[1px]">
                     <SearchInput onChange={(event) => {setSearch(event.target.value);}}/>
                 </div>
-                <div className="flex flex-wrap gap-5 min-h-80">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 min-h-80">
                     {
                         projetosFiltrados.length > 0 ?
                         projetosFiltrados

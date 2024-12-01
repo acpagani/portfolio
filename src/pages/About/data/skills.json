@@ -37,54 +37,60 @@
     },
     {
         "id": 7,
+        "skillName": "DaisyUI",
+        "skillCategory": "Front-End",
+        "skillIcon": "/assets/images/svg/daisyui.svg"
+    },
+    {
+        "id": 8,
         "skillName": "NodeJS",
         "skillCategory": "Back-End",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
     },
     {
-        "id": 8,
+        "id": 9,
         "skillName": "Python",
         "skillCategory": "Back-End",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
     },
     {
-        "id": 9,
+        "id": 10,
         "skillName": "Flask",
         "skillCategory": "Back-End",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"
     },
     {
-        "id": 10,
+        "id": 11,
         "skillName": "C#",
         "skillCategory": "Back-End",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
     },
     {
-        "id": 11,
+        "id": 12,
         "skillName": "C",
         "skillCategory": "Back-End",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
     },
     {
-        "id": 12,
+        "id": 13,
         "skillName": "SQL",
         "skillCategory": "DB",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
     },
     {
-        "id": 13,
+        "id": 14,
         "skillName": "SQLite",
         "skillCategory": "DB",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
     },
     {
-        "id": 14,
+        "id": 15,
         "skillName": "Git",
         "skillCategory": "Outros",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
     },
     {
-        "id": 15,
+        "id": 16,
         "skillName": "Figma",
         "skillCategory": "Outros",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"

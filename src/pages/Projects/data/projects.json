@@ -77,5 +77,29 @@
         "description": "O projeto consiste em um clone de um dos anúncios do Airbnb, com o objetivo de treinar minhas habilidades em front-end, como HTML, CSS e Javascript. O projeto também conta com um design responsivo, para que possa ser visualizado de forma adequada em qualquer dispositivo.",
         "link": "https://acpagani.github.io/clone-airbnb/",
         "githubLink": "https://github.com/acpagani/clone-airbnb"
+    },
+    {
+        "id": 5,
+        "name": "EcoWatt",
+        "skills": [
+            1, 2, 3, 4, 5, 7, 8, 15, 16
+        ],
+        "institution": "FIAP",
+        "institutionImage": "/assets/images/fiapLogo.png",
+        "imageUrlBanner": "/assets/images/ecowattBanner.png",
+        "imageUrls": [
+            "/assets/images/ecowatt/ecowatt1.png",
+            "/assets/images/ecowatt/ecowatt2.png",
+            "/assets/images/ecowatt/ecowatt3.png",
+            "/assets/images/ecowatt/ecowatt4.png",
+            "/assets/images/ecowatt/ecowatt5.png",
+            "/assets/images/ecowatt/ecowatt6.png",
+            "/assets/images/ecowatt/ecowatt7.png"
+        ],
+        "subtitle": "Plataforma de monitoramento de energia",
+        "intro": "A EcoWatt é uma plataforma de monitoramento de energia que visa auxiliar grandes complexos industriais a economizarem energia elétrica.",
+        "description": "A plataforma conta com um sistema de monitoramento de energia por métricas emitidas pelo usuário, com gráficos sobre o consumo de energia e relatórios de melhoria detalhados gerados por IA. Além disso, a EcoWatt também conta com um sistema de ranqueamento, onde indústrias competem entre si por selos sustentáveis e bonificações, criando uma competição totalmente saudável e que transforma vidas. O projeto foi desenvolvido durante a Global Solution 2.0 de 2024 da FIAP.",
+        "link": "https://eco-watt-gs.vercel.app/",
+        "githubLink": "https://github.com/acpagani/EcoWatt"
     }
 ]
