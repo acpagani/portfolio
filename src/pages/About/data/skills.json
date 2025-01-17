@@ -94,5 +94,11 @@
         "skillName": "Figma",
         "skillCategory": "Outros",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+    },
+    {
+        "id": 17,
+        "skillName": "mongoDB",
+        "skillCategory": "DB",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"
     }
 ]
