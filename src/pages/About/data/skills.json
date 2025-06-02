@@ -100,5 +100,53 @@
         "skillName": "mongoDB",
         "skillCategory": "DB",
         "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg"
+    },
+    {
+        "id": 18,
+        "skillName": "Golang",
+        "skillCategory": "Back-End",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
+    },
+    {
+        "id": 19,
+        "skillName": "Salesforce",
+        "skillCategory": "Outros",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg"
+    },
+    {
+        "id": 20,
+        "skillName": "AWS",
+        "skillCategory": "Outros",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+    },
+    {
+        "id": 21,
+        "skillName": "Oracle DB",
+        "skillCategory": "DB",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg"
+    },
+    {
+        "id": 22,
+        "skillName": "Typescript",
+        "skillCategory": "Front-End",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+    },
+    {
+        "id": 23,
+        "skillName": "NextJS",
+        "skillCategory": "Front-End",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+    },
+    {
+        "id": 24,
+        "skillName": "Java",
+        "skillCategory": "Back-End",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+    },
+    {
+        "id": 25,
+        "skillName": "Jira",
+        "skillCategory": "Outros",
+        "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"
     }
 ]
