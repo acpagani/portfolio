@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Arthur Cotrick Pagani">
+  <!-- The site's motif at tab scale: a ranked queue. Descending widths read as
+       order (first contact on top), not as a menu. Dark plate so the mark holds
+       on both light and dark browser chrome; bar opacities are tuned so all
+       three still separate at 16px, where one unit is half a pixel. -->
+  <rect width="32" height="32" rx="7" fill="#04070F"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#4C9EFF" stroke-opacity="0.22"/>
+  <rect x="6" y="6.5" width="20" height="5" rx="2.5" fill="#4C9EFF"/>
+  <rect x="6" y="13.5" width="14" height="5" rx="2.5" fill="#4C9EFF" fill-opacity="0.62"/>
+  <rect x="6" y="20.5" width="9" height="5" rx="2.5" fill="#4C9EFF" fill-opacity="0.38"/>
+</svg>

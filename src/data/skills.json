@@ -1,0 +1,36 @@
+[
+  { "id": 13, "skillName": "SQL", "skillCategory": "Dados & Cloud", "level": "Avançado", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
+  { "id": 9, "skillName": "Python", "skillCategory": "Dados & Cloud", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { "id": 20, "skillName": "AWS", "skillCategory": "Dados & Cloud", "level": "Glue · Step Functions · S3", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { "id": 26, "skillName": "PySpark", "skillCategory": "Dados & Cloud", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" },
+  { "id": 21, "skillName": "Oracle", "skillCategory": "Dados & Cloud", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" },
+  { "id": 27, "skillName": "PostgreSQL", "skillCategory": "Dados & Cloud", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { "id": 17, "skillName": "MongoDB", "skillCategory": "Dados & Cloud", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+  { "id": 14, "skillName": "SQLite", "skillCategory": "Dados & Cloud", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" },
+
+  { "id": 3, "skillName": "JavaScript", "skillCategory": "Linguagens", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+  { "id": 22, "skillName": "TypeScript", "skillCategory": "Linguagens", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+  { "id": 24, "skillName": "Java", "skillCategory": "Linguagens", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+  { "id": 11, "skillName": "C#", "skillCategory": "Linguagens", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
+  { "id": 12, "skillName": "C", "skillCategory": "Linguagens", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+
+  { "id": 4, "skillName": "React", "skillCategory": "Front-end", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { "id": 23, "skillName": "Next.js", "skillCategory": "Front-end", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { "id": 30, "skillName": "React Native", "skillCategory": "Front-end", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { "id": 5, "skillName": "Tailwind", "skillCategory": "Front-end", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { "id": 1, "skillName": "HTML", "skillCategory": "Front-end", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+  { "id": 2, "skillName": "CSS", "skillCategory": "Front-end", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+  { "id": 6, "skillName": "Bootstrap", "skillCategory": "Front-end", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" },
+  { "id": 7, "skillName": "DaisyUI", "skillCategory": "Front-end", "skillIcon": "/assets/images/svg/daisyui.svg" },
+
+  { "id": 29, "skillName": "Spring Boot", "skillCategory": "Back-end", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+  { "id": 10, "skillName": "Flask", "skillCategory": "Back-end", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" },
+  { "id": 28, "skillName": "Supabase", "skillCategory": "Back-end", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+  { "id": 8, "skillName": "Node.js", "skillCategory": "Back-end", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+
+  { "id": 15, "skillName": "Git / GitHub", "skillCategory": "Ferramentas", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { "id": 31, "skillName": "GitHub Actions", "skillCategory": "Ferramentas", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" },
+  { "id": 32, "skillName": "Excel Avançado", "skillCategory": "Ferramentas", "core": true, "skillIcon": "" },
+  { "id": 19, "skillName": "Salesforce", "skillCategory": "Ferramentas", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" },
+  { "id": 16, "skillName": "Figma", "skillCategory": "Ferramentas", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" }
+]
