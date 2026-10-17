@@ -22,13 +22,30 @@ src/
   components/   Header, menu mobile, cards, galeria, botões, chips
   sections/     Blocos da home (Hero, Manifesto, PriorityEngine, ...)
   pages/        Uma por rota
-  data/         profile.js, projects.json, skills.json — todo o conteúdo
+  data/         profile.js, projects.json, skills.json — dados
+  i18n/         pt.js, en.js — todo o texto do site, nos dois idiomas
   lib/          Registro do GSAP, escalas de easing/variants, navegação
 ```
 
-O conteúdo vive inteiramente em `src/data`. Para atualizar experiência,
-formação, projetos ou tecnologias, basta editar esses arquivos — nenhum
-componente precisa ser tocado.
+Nenhum componente precisa ser tocado para atualizar conteúdo:
+
+- **Texto** (títulos, parágrafos, botões, rótulos) fica em `src/i18n/pt.js` e
+  `src/i18n/en.js`. Os dois arquivos precisam ter exatamente o mesmo formato —
+  em desenvolvimento, o console avisa se uma chave existir em um e não no outro.
+- **Dados que não mudam com o idioma** (datas, links, scores, tags) ficam em
+  `src/data/profile.js`, uma vez só.
+- **Projetos e skills** ficam em `projects.json` e `skills.json`. O registro
+  base é em português; a versão em inglês vai num bloco `"en"` dentro do
+  próprio item, com apenas os campos que mudam (`subtitle`, `intro`,
+  `description`, ...). O que não estiver no bloco cai no valor em português.
+
+## Idiomas
+
+O botão `PT | EN` no topo troca o site inteiro. Na primeira visita, o idioma
+vem do navegador (português para `pt-*`, inglês para o resto); depois disso
+vale a escolha salva no `localStorage`. A troca atualiza `<html lang>`, o
+`<title>` e a meta description, e preserva o estado das páginas — filtros de
+projetos e texto digitado no formulário continuam onde estavam.
 
 ## Rotas
 

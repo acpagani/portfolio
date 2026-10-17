@@ -1,6 +1,7 @@
+// `key` indexes t.nav in the active language dictionary.
 export const NAV_LINKS = [
-  { to: "/", label: "Início", end: true },
-  { to: "/about", label: "Trajetória" },
-  { to: "/projects", label: "Projetos" },
-  { to: "/contact", label: "Contato" },
+  { to: "/", key: "home", end: true },
+  { to: "/about", key: "about" },
+  { to: "/projects", key: "projects" },
+  { to: "/contact", key: "contact" },
 ];

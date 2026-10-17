@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { EASE_OUT, EASE_IN } from "../lib/motion";
+import { useLang } from "../i18n/context";
 
 /**
  * User-driven only — nothing autoplays. The frame has a fixed aspect ratio so
@@ -10,6 +11,8 @@ import { EASE_OUT, EASE_IN } from "../lib/motion";
 export default function Gallery({ images, name }) {
   const [[index, dir], setState] = useState([0, 0]);
   const reduce = useReducedMotion();
+  const { t } = useLang();
+  const g = t.project.gallery;
 
   if (!images?.length) return null;
 
@@ -37,14 +40,14 @@ export default function Gallery({ images, name }) {
       <div
         className="group relative aspect-[16/10] overflow-hidden rounded-xl border border-line bg-abyss"
         role="region"
-        aria-roledescription="carrossel"
-        aria-label={`Imagens do projeto ${name}`}
+        aria-roledescription={g.roleDescription}
+        aria-label={g.label(name)}
       >
         <AnimatePresence initial={false} custom={dir} mode="wait">
           <motion.img
             key={images[index]}
             src={images[index]}
-            alt={`${name} — imagem ${index + 1} de ${images.length}`}
+            alt={g.alt(name, index + 1, images.length)}
             custom={dir}
             variants={variants}
             initial="enter"
@@ -66,7 +69,7 @@ export default function Gallery({ images, name }) {
             <button
               type="button"
               onClick={() => go(index - 1, -1)}
-              aria-label="Imagem anterior"
+              aria-label={g.prev}
               className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-ink/70 text-paper backdrop-blur transition-[color,border-color] duration-150 hover:border-azure hover:text-azure"
             >
               <MdChevronLeft className="h-6 w-6" aria-hidden="true" />
@@ -74,7 +77,7 @@ export default function Gallery({ images, name }) {
             <button
               type="button"
               onClick={() => go(index + 1, 1)}
-              aria-label="Próxima imagem"
+              aria-label={g.next}
               className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-ink/70 text-paper backdrop-blur transition-[color,border-color] duration-150 hover:border-azure hover:text-azure"
             >
               <MdChevronRight className="h-6 w-6" aria-hidden="true" />
@@ -94,7 +97,7 @@ export default function Gallery({ images, name }) {
               <button
                 type="button"
                 onClick={() => go(i, i > index ? 1 : -1)}
-                aria-label={`Ir para a imagem ${i + 1}`}
+                aria-label={g.goTo(i + 1)}
                 aria-current={i === index}
                 className={`h-14 w-20 overflow-hidden rounded-md border transition-colors duration-150 ${
                   i === index ? "border-azure" : "border-line hover:border-lineStrong"

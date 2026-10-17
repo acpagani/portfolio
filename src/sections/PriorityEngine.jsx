@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { gsap, ScrollTrigger, useGSAP } from "../lib/gsap";
-import { engine } from "../data/profile";
+import { engineRows } from "../data/profile";
+import { useLang } from "../i18n/context";
 
 /**
  * The one signature moment of the site.
@@ -26,6 +27,8 @@ export default function PriorityEngine() {
   const root = useRef(null);
   const stage = useRef(null);
   const rows = useRef([]);
+  const { t } = useLang();
+  const engine = t.engine;
 
   useGSAP(
     () => {
@@ -163,12 +166,14 @@ export default function PriorityEngine() {
           </h2>
 
           <ol className="flex flex-col gap-6">
-            {engine.steps.map((s) => (
-              <li key={s.n} className="pe-step relative flex gap-5 pl-5">
+            {engine.steps.map((s, i) => (
+              <li key={i} className="pe-step relative flex gap-5 pl-5">
                 <span className="absolute left-0 top-1 h-full w-px bg-line" aria-hidden="true">
                   <span className="pe-mark absolute inset-0 block origin-top bg-azure" />
                 </span>
-                <span className="mt-1 font-mono text-[0.65rem] text-azure">{s.n}</span>
+                <span className="mt-1 font-mono text-[0.65rem] text-azure">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <span className="flex flex-col gap-1.5">
                   <span className="text-base font-medium text-paper">{s.title}</span>
                   <span className="max-w-md text-sm leading-relaxed text-muted">{s.text}</span>
@@ -182,12 +187,12 @@ export default function PriorityEngine() {
         <div className="lg:col-span-7">
           <div className="rounded-2xl border border-line bg-panel/40 p-4 backdrop-blur-[2px] sm:p-6">
             <div className="mb-4 flex items-center justify-between border-b border-line pb-3">
-              <span className="label">Carteira PJ · fila de abordagem</span>
-              <span className="font-mono text-[0.6rem] text-muted">score</span>
+              <span className="label">{engine.stage}</span>
+              <span className="font-mono text-[0.6rem] text-muted">{engine.score}</span>
             </div>
 
             <ol ref={stage} className="flex flex-col gap-2">
-              {engine.rows.map((r, i) => (
+              {engineRows.map((r, i) => (
                 <li
                   key={r.id}
                   ref={(el) => (rows.current[i] = el)}
@@ -209,8 +214,12 @@ export default function PriorityEngine() {
                   </span>
 
                   <span className="flex min-w-0 flex-col">
-                    <span className="truncate font-mono text-[0.78rem] text-paper">{r.cnpj}</span>
-                    <span className="truncate text-[0.72rem] text-muted">{r.segment}</span>
+                    <span className="truncate font-mono text-[0.78rem] text-paper">
+                      {engine.idPrefix} ••• {r.tail}
+                    </span>
+                    <span className="truncate text-[0.72rem] text-muted">
+                      {engine.segments[r.segment]}
+                    </span>
                   </span>
 
                   <span className="flex items-center gap-3">
@@ -230,7 +239,7 @@ export default function PriorityEngine() {
             </ol>
 
             <p className="mt-4 border-t border-line pt-3 font-mono text-[0.6rem] uppercase tracking-label text-muted">
-              Dados ilustrativos · a lógica real é proprietária
+              {engine.disclaimer}
             </p>
           </div>
         </div>

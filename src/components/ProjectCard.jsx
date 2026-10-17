@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { GoArrowUpRight } from "react-icons/go";
 import ProjectCover from "./ProjectCover";
-import skills from "../data/skills.json";
-
-const nameOf = (id) => skills.find((s) => s.id === id)?.skillName;
+import { useLang } from "../i18n/context";
+import { useSkills } from "../i18n/data";
 
 export default function ProjectCard({ project, index }) {
+  const { t } = useLang();
+  const skills = useSkills();
+  const nameOf = (id) => skills.find((s) => s.id === id)?.skillName;
   const stack = [
     ...project.skills.map(nameOf).filter(Boolean),
     ...(project.extraStack || []),
@@ -17,7 +19,7 @@ export default function ProjectCard({ project, index }) {
         {project.imageUrlBanner ? (
           <img
             src={project.imageUrlBanner}
-            alt={`Interface do projeto ${project.name}`}
+            alt={t.project.cardAlt(project.name)}
             loading="lazy"
             width="800"
             height="500"
@@ -37,7 +39,7 @@ export default function ProjectCard({ project, index }) {
           <span>
             {String(index + 1).padStart(2, "0")} · {project.year}
           </span>
-          <span className="text-azure/80">{project.kind}</span>
+          <span className="text-azure/80">{t.kinds[project.kind]}</span>
         </div>
 
         <h3 className="flex items-start justify-between gap-3 font-display text-2xl leading-tight text-paper">

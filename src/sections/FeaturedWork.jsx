@@ -4,9 +4,12 @@ import SectionHeading from "../components/SectionHeading";
 import ProjectCard from "../components/ProjectCard";
 import Action from "../components/Action";
 import { listVariants, itemVariants, viewportOnce } from "../lib/motion";
-import projects from "../data/projects.json";
+import { useLang } from "../i18n/context";
+import { useProjects } from "../i18n/data";
 
 export default function FeaturedWork() {
+  const { t } = useLang();
+  const projects = useProjects();
   const featured = projects.filter((p) => p.featured).slice(0, 4);
 
   return (
@@ -15,9 +18,9 @@ export default function FeaturedWork() {
         <SectionHeading
           id="trabalho-title"
           index="04"
-          kicker="Trabalho"
-          title="Quatro problemas de ordenar coisas"
-          lede="Pós-venda, patrimônio, órbita, laboratório. Muda o domínio, permanece a pergunta: o que merece atenção primeiro?"
+          kicker={t.work.kicker}
+          title={t.work.title}
+          lede={t.work.lede}
         />
 
         <motion.div
@@ -36,7 +39,7 @@ export default function FeaturedWork() {
 
         <div className="flex justify-start">
           <Action to="/projects" variant="ghost" icon={<GoArrowUpRight className="h-4 w-4" />}>
-            Todos os projetos
+            {t.common.allProjects}
           </Action>
         </div>
       </div>

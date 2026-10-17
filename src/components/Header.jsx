@@ -3,7 +3,9 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { EASE_OUT } from "../lib/motion";
 import MobileMenu from "./MobileMenu";
+import LangSwitch from "./LangSwitch";
 import { NAV_LINKS } from "../lib/nav";
+import { useLang } from "../i18n/context";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -13,6 +15,7 @@ export default function Header() {
   const lastY = useRef(0);
   const { scrollY } = useScroll();
   const { pathname } = useLocation();
+  const { t } = useLang();
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -54,7 +57,7 @@ export default function Header() {
             <Link
               to="/"
               className="group flex items-baseline gap-2.5"
-              aria-label="Arthur Cotrick Pagani — início"
+              aria-label={t.a11y.home}
             >
               <span className="font-display text-2xl leading-none tracking-tight text-paper">
                 ACP
@@ -64,7 +67,8 @@ export default function Header() {
               </span>
             </Link>
 
-            <nav className="hidden md:block" aria-label="Principal">
+            <div className="flex items-center gap-3">
+            <nav className="hidden md:block" aria-label={t.a11y.mainNav}>
               <ul className="flex items-center gap-1">
                 {NAV_LINKS.map((l) => (
                   <li key={l.to}>
@@ -86,7 +90,7 @@ export default function Header() {
                               transition={{ type: "spring", stiffness: 420, damping: 34 }}
                             />
                           )}
-                          {l.label}
+                          {t.nav[l.key]}
                         </>
                       )}
                     </NavLink>
@@ -95,12 +99,14 @@ export default function Header() {
               </ul>
             </nav>
 
+            <LangSwitch />
+
             <button
               ref={triggerRef}
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
-              aria-label={open ? "Fechar menu" : "Abrir menu"}
+              aria-label={open ? t.a11y.closeMenu : t.a11y.openMenu}
               className="relative z-50 -mr-2 flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-150 hover:bg-panel md:hidden"
             >
               <span className="relative block h-3.5 w-6">
@@ -116,6 +122,7 @@ export default function Header() {
                 />
               </span>
             </button>
+            </div>
           </div>
         </div>
       </motion.header>

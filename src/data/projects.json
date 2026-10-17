@@ -22,8 +22,15 @@
     ],
     "intro": "Consome a telemetria dos veículos conectados Ford e entrega ao consultor da concessionária uma fila priorizada de clientes para abordar — cada ação com motivo explícito, janela recomendada e roteiro de conversa.",
     "description": "A Ford perdeu VIN Share, o indicador que mede quantos clientes voltam à rede depois da compra. O gargalo não era falta de dado: os veículos conectados já reportam pressão de pneu, tensão de bateria, código de falha e hodômetro. Esse sinal morre no nível corporativo e nunca desce até o consultor, que é a única pessoa que fala com o cliente. O contato ativo que existe é lembrete por data, disparado igual para a base inteira — inclusive para quem fez a revisão semana passada.\n\nO PitWall é a camada entre a telemetria e o CRM: não capta o dado e não registra o contato, decide qual contato deve acontecer. Doze regras determinísticas cruzam sinal e contexto, um score composto por propensão, valor, urgência e risco de churn — dividido pelo esforço da abordagem — ordena os candidatos, e guardrails de cooldown, teto mensal e consentimento LGPD suprimem o que não deve sair. Ação suprimida não some: fica numa aba à parte com o motivo preenchido, que é a resposta direta ao lembrete que insiste em quem já foi atendido.\n\nA divisão de responsabilidade é decisão de projeto, não limitação técnica. A engine decide o quê, com regra e score auditáveis, porque o consultor precisa saber por que aquele nome está na frente e a Ford precisa poder auditar. A IA generativa escreve só o como — o roteiro da conversa — e nunca diagnostica nem inventa dado técnico. Cada desfecho registrado realimenta a performance da regra, e é esse laço que separa uma engine de uma lista estática.\n\nO nome vem do automobilismo: o pit wall é o posto onde fica o time de estratégia, que não pilota — lê telemetria, cruza com o contexto da corrida e decide a próxima ação. O protótipo é React e TypeScript com a engine isolada em funções puras, e tem um modo de demonstração que injeta sinal ao vivo e mostra a fila se reordenando na tela.",
-    "link": "",
-    "githubLink": ""
+    "link": "https://www.youtube.com/watch?v=e6Ze22MCZfg&t=5s",
+    "githubLink": "",
+    "en": {
+      "subtitle": "The decision layer for automotive after-sales",
+      "role": "Product & front-end",
+      "extraStack": ["Recharts", "Rules engine", "LGPD"],
+      "intro": "Consumes telemetry from Ford's connected vehicles and hands the dealership's service advisor a prioritized queue of customers to contact — each action with an explicit reason, a recommended window and a conversation script.",
+      "description": "Ford was losing VIN Share — the metric that tracks how many customers come back to the dealer network after buying. The bottleneck wasn't missing data: connected vehicles already report tire pressure, battery voltage, fault codes and mileage. That signal dies at corporate level and never reaches the service advisor, the only person who actually talks to the customer. The only proactive contact that exists is a date-based reminder, fired identically at the whole base — including people who had their service done last week.\n\nPitWall is the layer between telemetry and the CRM: it doesn't capture the data and doesn't log the contact — it decides which contact should happen. Twelve deterministic rules cross signal and context, a composite score of propensity, value, urgency and churn risk — divided by the effort of the approach — ranks the candidates, and guardrails for cooldown, monthly caps and LGPD consent suppress what shouldn't go out. A suppressed action doesn't vanish: it sits in a separate tab with the reason filled in, which is the direct answer to the reminder that keeps nagging people who were already served.\n\nThe split of responsibility is a design decision, not a technical limitation. The engine decides the what, with auditable rules and scores, because the advisor needs to know why that name is at the top and Ford needs to be able to audit it. Generative AI writes only the how — the conversation script — and never diagnoses anything or invents technical data. Every recorded outcome feeds back into the rule's performance, and that loop is what separates an engine from a static list.\n\nThe name comes from motorsport: the pit wall is where the strategy team sits — they don't drive; they read telemetry, cross it with the race context and call the next move. The prototype is React and TypeScript with the engine isolated in pure functions, plus a demo mode that injects signals live and shows the queue reordering on screen."
+    }
   },
   {
     "id": 6,
@@ -43,7 +50,15 @@
     "intro": "Um agregador que puxa as posições via Open Finance e consolida renda fixa e variável no mesmo lugar — com rentabilidade calculada por XIRR, não por média simples.",
     "description": "A conta que a maioria dos apps entrega é a variação nominal da carteira, que mente sempre que existe aporte ou resgate no meio do caminho. Aqui a rentabilidade sai por XIRR — taxa interna de retorno com fluxos em datas irregulares —, que é a forma honesta de comparar uma carteira que recebe dinheiro novo todo mês contra um benchmark. A ingestão roda em Python agendada por GitHub Actions, os dados ficam no Supabase e a leitura acontece num front em React. Renda fixa e variável são consolidadas no mesmo modelo, para que a pergunta “quanto eu realmente ganhei” tenha uma resposta só.",
     "link": "",
-    "githubLink": ""
+    "githubLink": "",
+    "en": {
+      "name": "Wealth Dashboard",
+      "subtitle": "Investment aggregator built on Open Finance",
+      "role": "Concept, back-end and front-end",
+      "institution": "Personal project",
+      "intro": "An aggregator that pulls positions through Open Finance and consolidates fixed income and equities in one place — with returns computed by XIRR, not a simple average.",
+      "description": "What most apps show is the nominal change in the portfolio, which lies every time there's a deposit or withdrawal along the way. Here, returns come from XIRR — internal rate of return over irregularly dated cash flows — which is the honest way to compare a portfolio that gets new money every month against a benchmark. Ingestion runs in Python on a GitHub Actions schedule, the data lives in Supabase and reading happens in a React front-end. Fixed income and equities share the same model, so the question “how much did I actually make” has a single answer."
+    }
   },
   {
     "id": 7,
@@ -59,11 +74,24 @@
     "institution": "FIAP",
     "institutionImage": "/assets/images/fiapLogo.png",
     "imageUrlBanner": "/assets/images/orbitguardBanner.png",
-    "imageUrls": ["/assets/images/orbitGuard/orbitguard1.png", "/assets/images/orbitGuard/orbitguard2.png", "/assets/images/orbitGuard/orbitguard3.png", "/assets/images/orbitGuard/orbitguard4.png", "/assets/images/orbitGuard/orbitguard5.png"],
+    "imageUrls": [
+      "/assets/images/orbitGuard/orbitguard1.png",
+      "/assets/images/orbitGuard/orbitguard2.png",
+      "/assets/images/orbitGuard/orbitguard3.png",
+      "/assets/images/orbitGuard/orbitguard4.png",
+      "/assets/images/orbitGuard/orbitguard5.png"
+    ],
     "intro": "Plataforma B2B que acompanha objetos em órbita e avisa operadores quando dois deles entram em rota de aproximação.",
-    "description": "A órbita baixa virou um lugar cheio. Cada lançamento novo aumenta a chance de um evento de conjunção — dois objetos passando perto o suficiente para exigir manobra. O OrbitShield consome dados de trajetória, calcula proximidade e entrega o alerta ao operador no celular, com prazo para decidir. O app é React Native e o processamento roda na AWS. O problema aqui é o mesmo que me interessa no banco, com outra roupa: transformar um volume grande de eventos indistintos numa lista curta do que exige ação agora.",
+    "description": "A órbita baixa virou um lugar cheio. Cada lançamento novo aumenta a chance de um evento de conjunção — dois objetos passando perto o suficiente para exigir manobra. O OrbitGuard consome dados de trajetória, calcula proximidade e entrega o alerta ao operador no celular, com prazo para decidir. O app é React Native e o processamento roda na AWS. O problema aqui é o mesmo que me interessa no banco, com outra roupa: transformar um volume grande de eventos indistintos numa lista curta do que exige ação agora.",
     "link": "",
-    "githubLink": ""
+    "githubLink": "",
+    "en": {
+      "subtitle": "Satellite collision monitoring",
+      "role": "Mobile & integration",
+      "extraStack": ["B2B", "Alerts"],
+      "intro": "A B2B platform that tracks objects in orbit and warns operators when two of them are on a closing course.",
+      "description": "Low Earth orbit has become a crowded place. Every new launch raises the odds of a conjunction event — two objects passing close enough to require a maneuver. OrbitGuard consumes trajectory data, computes proximity and pushes the alert to the operator's phone, with a deadline to decide. The app is React Native and the processing runs on AWS. The problem is the same one that interests me at the bank, in different clothes: turning a large volume of indistinct events into a short list of what needs action now."
+    }
   },
   {
     "id": 9,
@@ -83,7 +111,14 @@
     "intro": "Projeto campeão do Desafio Challenge Innovation da FIAP, o SmartLab surgiu em parceria à rede DASA para promover controle total de insumos nos laboratórios.",
     "description": "O SmartLab nasceu da nossa ideia de integrar tecnologia, automação e análise de dados para criar um ambiente inteligente e eficiente, unindo software e hardware em um ecossistema completo, capaz de realizar auditorias automatizadas nos laboratórios da Dasa. Nosso sistema permite que o profissional de saúde selecione o procedimento desejado e se autentique com o crachá, utilizando um sensor RFID conectado ao computador do almoxarifado. A partir disso, a aplicação principal envia uma solicitação ao hardware, que realiza a liberação controlada dos itens necessários para o procedimento. Todo o processo é registrado automaticamente em nosso banco de dados na nuvem (AWS), armazenando informações como: • Quem realizou a retirada • Quais itens foram utilizados • Quando eles foram retirados Garantindo assim rastreabilidade e segurança em cada etapa!",
     "link": "https://smartlab-dash-vision-prod.vercel.app/dashboard",
-    "githubLink": ""
+    "githubLink": "",
+    "en": {
+      "subtitle": "Inventory control for laboratories",
+      "role": "Concept, back-end and front-end",
+      "extraStack": ["Inventory control", "Lab management", "RFID"],
+      "intro": "Winner of FIAP's Challenge Innovation, SmartLab was built in partnership with the DASA network to give labs full control over their supplies.",
+      "description": "SmartLab grew out of our idea of combining technology, automation and data analysis into a smart, efficient environment — software and hardware in a single ecosystem able to run automated audits across Dasa's laboratories. A healthcare professional selects the procedure and authenticates with their badge on an RFID reader connected to the stockroom computer. The main application then sends a request to the hardware, which releases exactly the items that procedure requires. Every step is recorded automatically in our cloud database on AWS — who made the withdrawal, which items were used and when they were taken — guaranteeing traceability and security at every stage."
+    }
   },
   {
     "id": 2,
@@ -108,7 +143,12 @@
     "intro": "Aplicação web de gestão de obras, entregue como projeto final do CS50x — Harvard's Introduction to Computer Science.",
     "description": "O gerente enxerga o complexo inteiro de obras numa visão macro e desce até a relação de funcionário alocado por construção. Sobre isso existe uma mecânica de postagens de atualização: o gerente registra o que mudou no dia e o cliente acompanha o andamento sem precisar ligar para perguntar. Foi o projeto que fechou o CS50 e o primeiro em que precisei desenhar o modelo de dados antes de escrever qualquer tela.",
     "link": "https://www.youtube.com/watch?v=RDXGWPb5yQI",
-    "githubLink": "https://github.com/acpagani/cs50-project"
+    "githubLink": "https://github.com/acpagani/cs50-project",
+    "en": {
+      "subtitle": "Construction management · CS50 final project",
+      "intro": "A web application for construction management, delivered as the final project of CS50x — Harvard's Introduction to Computer Science.",
+      "description": "The manager sees every construction site at a glance and drills down to which worker is assigned to which build. On top of that there's an update feed: the manager posts what changed that day and the client follows progress without having to call and ask. It was the project that closed out CS50, and the first one where I had to design the data model before writing a single screen."
+    }
   },
   {
     "id": 5,
@@ -136,7 +176,12 @@
     "intro": "Plataforma que ajuda complexos industriais a enxergar — e cortar — o próprio consumo de energia elétrica.",
     "description": "O sistema acompanha métricas de consumo enviadas pela própria indústria, monta a série em gráficos e devolve relatórios de melhoria gerados por IA. Sobre a camada de dados existe um ranqueamento: as indústrias competem por selos sustentáveis e bonificações, o que transforma um relatório técnico em algo que alguém realmente quer abrir. Projeto da Global Solution 2.0 de 2024 da FIAP.",
     "link": "https://eco-watt-gs.vercel.app/",
-    "githubLink": "https://github.com/acpagani/EcoWatt"
+    "githubLink": "https://github.com/acpagani/EcoWatt",
+    "en": {
+      "subtitle": "Industrial energy monitoring",
+      "intro": "A platform that helps industrial complexes see — and cut — their own electricity consumption.",
+      "description": "The system tracks consumption metrics submitted by each plant, charts the series and returns AI-generated improvement reports. On top of the data layer sits a ranking: plants compete for sustainability seals and bonuses, which turns a technical report into something someone actually wants to open. Built for FIAP's 2024 Global Solution 2.0."
+    }
   },
   {
     "id": 1,
@@ -161,7 +206,12 @@
     "intro": "Um hub dedicado à Fórmula E, feito para mostrar que a categoria é tão elétrica na pista quanto no discurso de sustentabilidade.",
     "description": "A plataforma reúne uma seção informativa com notícias da modalidade, um sistema gamificado com pontuação e colecionáveis, e a VoltAI — assistente especializada em Fórmula E para atender o usuário a qualquer hora. Projeto do Challenge 2024 da FIAP, em parceria com a Tech Mahindra.",
     "link": "https://the-eway.vercel.app/",
-    "githubLink": "https://github.com/ulipese/eway"
+    "githubLink": "https://github.com/ulipese/eway",
+    "en": {
+      "subtitle": "Formula E information hub",
+      "intro": "A hub dedicated to Formula E, built to show the series is as electric on track as it is in its sustainability pitch.",
+      "description": "The platform brings together a news section about the series, a gamified system with points and collectibles, and VoltAI — an assistant specialized in Formula E, available to users at any hour. Built for FIAP's 2024 Challenge, in partnership with Tech Mahindra."
+    }
   },
   {
     "id": 3,
@@ -177,14 +227,16 @@
     "institution": "FIAP",
     "institutionImage": "/assets/images/fiapLogo.png",
     "imageUrlBanner": "/assets/images/reciclaMarBanner.png",
-    "imageUrls": [
-      "/assets/images/reciclaMar/reciclaMar1.png",
-      "/assets/images/reciclaMar/reciclaMar2.png"
-    ],
+    "imageUrls": ["/assets/images/reciclaMar/reciclaMar1.png", "/assets/images/reciclaMar/reciclaMar2.png"],
     "intro": "E se a empresa continuasse vinculada ao produto depois da venda? O ReciclaMar responde isso com um número.",
     "description": "A proposta rastreia produtos por tokens em blockchain e etiquetas RFID por unidade, com duas validações: uma quando o item é produzido e outra quando chega a um centro de reciclagem. Do intervalo entre as duas nasce o IRC — Índice de Reciclabilidade — atribuído a cada empresa e traduzido em selos verdes por faixa. Projeto da Global Solution Blue Future, primeiro semestre de 2024.",
     "link": "https://vitor-chaves-lima.github.io/global-solution-blue-future/src/home/",
-    "githubLink": "https://github.com/vitor-chaves-lima/global-solution-blue-future"
+    "githubLink": "https://github.com/vitor-chaves-lima/global-solution-blue-future",
+    "en": {
+      "subtitle": "Waste tracking and a recyclability index",
+      "intro": "What if a company stayed tied to its product after the sale? ReciclaMar answers that with a number.",
+      "description": "The proposal tracks products through blockchain tokens and per-unit RFID tags, with two checkpoints: one when the item is produced and another when it reaches a recycling center. The gap between the two produces the IRC — Recyclability Index — assigned to each company and translated into tiered green seals. Built for the Global Solution Blue Future, first semester of 2024."
+    }
   },
   {
     "id": 4,
@@ -204,6 +256,12 @@
     "intro": "Reconstrução fiel de uma página de anúncio do Airbnb em HTML, CSS e JavaScript puros.",
     "description": "Exercício da disciplina de Front-End Design da FIAP, e um dos primeiros trabalhos em que a régua era o pixel: reproduzir um layout real, responsivo, sem framework para esconder decisão errada de CSS. É um projeto antigo e continua aqui porque foi onde a base de front-end se formou.",
     "link": "https://acpagani.github.io/clone-airbnb",
-    "githubLink": "https://github.com/acpagani/clone-airbnb"
+    "githubLink": "https://github.com/acpagani/clone-airbnb",
+    "en": {
+      "name": "Airbnb Clone",
+      "subtitle": "Rebuilding a listing from scratch",
+      "intro": "A faithful rebuild of an Airbnb listing page in plain HTML, CSS and JavaScript.",
+      "description": "An exercise from FIAP's Front-End Design course, and one of the first projects where the yardstick was the pixel: reproduce a real, responsive layout with no framework to hide a bad CSS decision. It's an old project, and it stays here because it's where my front-end foundation was laid."
+    }
   }
 ]

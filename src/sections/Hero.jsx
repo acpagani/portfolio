@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { FaArrowDown } from "react-icons/fa6";
 import { gsap, SplitText, useGSAP } from "../lib/gsap";
-import { hero, profile } from "../data/profile";
+import { profile } from "../data/profile";
+import { useLang } from "../i18n/context";
 import Action from "../components/Action";
 
 const SUPPORTING = [".hero-eyebrow", ".hero-lede", ".hero-stat", ".hero-cta", ".hero-cue"];
@@ -18,6 +19,8 @@ const SUPPORTING = [".hero-eyebrow", ".hero-lede", ".hero-stat", ".hero-cta", ".
 export default function Hero() {
   const root = useRef(null);
   const headline = useRef(null);
+  const { t } = useLang();
+  const hero = t.hero;
 
   useGSAP(
     () => {
@@ -116,7 +119,7 @@ export default function Hero() {
     <section
       ref={root}
       className="relative z-10 flex min-h-[100svh] flex-col justify-end pb-10 pt-28"
-      aria-label="Apresentação"
+      aria-label={t.a11y.hero}
     >
       <div className="shell flex flex-col gap-8">
         <p className="hero-eyebrow flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-label text-muted">
@@ -159,10 +162,10 @@ export default function Hero() {
             variant="primary"
             icon={<FaArrowDown className="h-3 w-3" />}
           >
-            Ver o motor por dentro
+            {hero.ctaEngine}
           </Action>
           <Action className="hero-cta" to="/projects" variant="ghost">
-            Projetos
+            {t.common.projects}
           </Action>
           <Action
             className="hero-cta"
@@ -171,7 +174,7 @@ export default function Hero() {
             variant="quiet"
             icon={<FaArrowDown className="h-3 w-3" />}
           >
-            Currículo
+            {t.common.resume}
           </Action>
         </div>
 
@@ -180,7 +183,7 @@ export default function Hero() {
           className="hero-cue mt-4 hidden items-center gap-3 font-mono text-[0.6rem] uppercase tracking-label text-muted md:flex"
         >
           <span className="h-px w-12 bg-lineStrong" />
-          Role para ver a fila se formar
+          {hero.cue}
         </span>
       </div>
     </section>

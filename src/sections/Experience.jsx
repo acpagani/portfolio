@@ -3,6 +3,7 @@ import { gsap, useGSAP } from "../lib/gsap";
 import SectionHeading from "../components/SectionHeading";
 import Reveal from "../components/Reveal";
 import { experiences } from "../data/profile";
+import { useLang } from "../i18n/context";
 
 /**
  * The spine draws itself as the section scrolls — the one scrubbed element
@@ -11,6 +12,7 @@ import { experiences } from "../data/profile";
  */
 export default function Experience() {
   const root = useRef(null);
+  const { t } = useLang();
 
   useGSAP(
     () => {
@@ -53,9 +55,9 @@ export default function Experience() {
         <SectionHeading
           id="trajetoria-title"
           index="03"
-          kicker="Experiência"
-          title="Onde a regra encontrou produção"
-          lede="Dois anos entre produto e dado: de construir a aplicação inteira a decidir o que ela deve priorizar."
+          kicker={t.experience.kicker}
+          title={t.experience.title}
+          lede={t.experience.lede}
         />
 
         <ol ref={root} className="relative flex flex-col gap-14 pl-8 sm:pl-12">
@@ -66,8 +68,10 @@ export default function Experience() {
             <span className="xp-spine absolute inset-0 block origin-top bg-gradient-to-b from-azure to-azure/20" />
           </span>
 
-          {experiences.map((xp, i) => (
-            <Reveal as="li" key={xp.company} delay={i * 0.05} className="relative">
+          {experiences.map((xp, i) => {
+            const copy = t.experience.items[xp.id];
+            return (
+            <Reveal as="li" key={xp.id} delay={i * 0.05} className="relative">
               <span
                 aria-hidden="true"
                 className={`absolute -left-8 top-2 h-2 w-2 rounded-full sm:-left-12 ${
@@ -81,20 +85,20 @@ export default function Experience() {
                     {xp.company}
                   </h3>
                   <span className="font-mono text-[0.68rem] uppercase tracking-label text-azure">
-                    {xp.start} — {xp.end}
+                    {xp.start} — {xp.end ?? t.experience.present}
                   </span>
                 </div>
 
                 <p className="font-mono text-[0.72rem] uppercase tracking-label text-muted">
-                  {xp.role}
+                  {copy.role}
                 </p>
 
                 <p className="max-w-prose text-base leading-relaxed text-paper/90">
-                  {xp.summary}
+                  {copy.summary}
                 </p>
 
                 <ul className="flex max-w-prose flex-col gap-2">
-                  {xp.bullets.map((b) => (
+                  {copy.bullets.map((b) => (
                     <li key={b} className="flex gap-3 text-sm leading-relaxed text-muted">
                       <span aria-hidden="true" className="mt-2 h-px w-4 shrink-0 bg-lineStrong" />
                       {b}
@@ -114,7 +118,8 @@ export default function Experience() {
                 </ul>
               </div>
             </Reveal>
-          ))}
+            );
+          })}
         </ol>
       </div>
     </section>

@@ -1,7 +1,10 @@
 import Reveal from "../components/Reveal";
-import { manifesto } from "../data/profile";
+import { useLang } from "../i18n/context";
 
 export default function Manifesto() {
+  const { t } = useLang();
+  const manifesto = t.manifesto;
+
   return (
     <section className="relative z-10 py-28" aria-labelledby="posicao-title">
       <div className="shell flex flex-col gap-16">
@@ -36,11 +39,13 @@ export default function Manifesto() {
           {manifesto.points.map((p, i) => (
             <Reveal
               as="li"
-              key={p.n}
+              key={i}
               delay={i * 0.07}
               className="flex flex-col gap-4 bg-ink p-7"
             >
-              <span className="font-mono text-[0.65rem] tracking-label text-azure">{p.n}</span>
+              <span className="font-mono text-[0.65rem] tracking-label text-azure">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <h3 className="font-display text-2xl leading-tight text-paper">{p.title}</h3>
               <p className="text-sm leading-relaxed text-muted">{p.text}</p>
             </Reveal>

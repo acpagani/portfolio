@@ -1,5 +1,5 @@
 [
-  { "id": 13, "skillName": "SQL", "skillCategory": "Dados & Cloud", "level": "Avançado", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
+  { "id": 13, "skillName": "SQL", "skillCategory": "Dados & Cloud", "level": "Avançado", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg", "en": { "level": "Advanced" } },
   { "id": 9, "skillName": "Python", "skillCategory": "Dados & Cloud", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
   { "id": 20, "skillName": "AWS", "skillCategory": "Dados & Cloud", "level": "Glue · Step Functions · S3", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
   { "id": 26, "skillName": "PySpark", "skillCategory": "Dados & Cloud", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" },
@@ -30,7 +30,7 @@
 
   { "id": 15, "skillName": "Git / GitHub", "skillCategory": "Ferramentas", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
   { "id": 31, "skillName": "GitHub Actions", "skillCategory": "Ferramentas", "core": true, "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" },
-  { "id": 32, "skillName": "Excel Avançado", "skillCategory": "Ferramentas", "core": true, "skillIcon": "" },
+  { "id": 32, "skillName": "Excel Avançado", "skillCategory": "Ferramentas", "core": true, "skillIcon": "", "en": { "skillName": "Advanced Excel" } },
   { "id": 19, "skillName": "Salesforce", "skillCategory": "Ferramentas", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" },
   { "id": 16, "skillName": "Figma", "skillCategory": "Ferramentas", "skillIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" }
 ]

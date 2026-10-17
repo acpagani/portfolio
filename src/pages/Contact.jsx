@@ -7,6 +7,7 @@ import PageHeader from "../components/PageHeader";
 import Reveal from "../components/Reveal";
 import { EASE_OUT, EASE_IN } from "../lib/motion";
 import { profile } from "../data/profile";
+import { useLang } from "../i18n/context";
 
 const EMAILJS = {
   service: "service_198kdyd",
@@ -14,11 +15,11 @@ const EMAILJS = {
   key: "zR4GwwkWnKRSW7OWV",
 };
 
-const channels = [
+const channels = (phone) => [
   { href: profile.github, label: "GitHub", handle: "acpagani", Icon: FaGithub },
   { href: profile.linkedin, label: "LinkedIn", handle: "arthur-pagani", Icon: FaLinkedin },
   { href: `mailto:${profile.email}`, label: "E-mail", handle: profile.email, Icon: SiGmail },
-  { href: profile.phoneHref, label: "WhatsApp", handle: profile.phone, Icon: FaWhatsapp },
+  { href: profile.phoneHref, label: "WhatsApp", handle: phone, Icon: FaWhatsapp },
 ];
 
 const field =
@@ -34,19 +35,21 @@ export default function Contact() {
   const reduce = useReducedMotion();
   const shake = useAnimationControls();
   const copyTimer = useRef(null);
+  const { t } = useLang();
+  const c = t.contact;
 
   const set = (k) => (e) => {
     setValues((v) => ({ ...v, [k]: e.target.value }));
     if (errors[k]) setErrors((p) => ({ ...p, [k]: undefined }));
   };
 
+  // Errors record which field failed, not the sentence: the message renders in
+  // the active language, so switching mid-form never leaves a stale one.
   const validate = () => {
     const next = {};
-    if (!values.name.trim()) next.name = "Preciso saber com quem estou falando.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email))
-      next.email = "Esse e-mail não parece válido.";
-    if (values.message.trim().length < 10)
-      next.message = "Escreva ao menos uma frase — prometo ler.";
+    if (!values.name.trim()) next.name = true;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = true;
+    if (values.message.trim().length < 10) next.message = true;
     return next;
   };
 
@@ -92,9 +95,9 @@ export default function Contact() {
     <>
       <PageHeader
         id="contato-title"
-        kicker="Contato"
-        title="Escreva. Eu respondo."
-        lede="Vaga, projeto, uma pergunta sobre priorização de carteira ou só uma discordância bem argumentada. Tudo cabe no formulário."
+        kicker={c.kicker}
+        title={c.title}
+        lede={c.lede}
       />
 
       <div className="shell grid gap-14 pb-10 lg:grid-cols-12 lg:gap-16">
@@ -106,12 +109,12 @@ export default function Contact() {
           className="flex flex-col gap-5 lg:col-span-7"
         >
           <h2 id="form-title" className="sr-only">
-            Formulário de contato
+            {c.formTitle}
           </h2>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className="label">
-              Nome
+              {c.name}
             </label>
             <input
               id="name"
@@ -126,20 +129,20 @@ export default function Contact() {
             />
             {/* Validation appears instantly — an animated error reads as a bug. */}
             <span id="name-error" role="alert" className="min-h-[1.15rem] text-xs text-red-300">
-              {errors.name}
+              {errors.name && c.errors.name}
             </span>
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="label">
-              E-mail
+              {c.email}
             </label>
             <input
               id="email"
               name="email"
               type="email"
               autoComplete="email"
-              placeholder="voce@exemplo.com"
+              placeholder={c.emailPlaceholder}
               value={values.email}
               onChange={set("email")}
               aria-invalid={!!errors.email}
@@ -147,13 +150,13 @@ export default function Contact() {
               className={`${field} ${errors.email ? "border-red-400/70" : ""}`}
             />
             <span id="email-error" role="alert" className="min-h-[1.15rem] text-xs text-red-300">
-              {errors.email}
+              {errors.email && c.errors.email}
             </span>
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="message" className="label">
-              Mensagem
+              {c.message}
             </label>
             <textarea
               id="message"
@@ -166,7 +169,7 @@ export default function Contact() {
               className={`${field} resize-y ${errors.message ? "border-red-400/70" : ""}`}
             />
             <span id="message-error" role="alert" className="min-h-[1.15rem] text-xs text-red-300">
-              {errors.message}
+              {errors.message && c.errors.message}
             </span>
           </div>
 
@@ -183,10 +186,10 @@ export default function Contact() {
                     aria-hidden="true"
                     className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-ink/30 border-t-ink"
                   />
-                  Enviando
+                  {c.sending}
                 </>
               ) : (
-                "Enviar mensagem"
+                c.send
               )}
             </button>
 
@@ -200,7 +203,7 @@ export default function Contact() {
               ) : (
                 <FaRegCopy aria-hidden="true" className="h-3.5 w-3.5" />
               )}
-              {copied ? "E-mail copiado" : "Copiar e-mail"}
+              {copied ? c.copied : c.copy}
             </button>
           </div>
 
@@ -214,7 +217,7 @@ export default function Contact() {
                 exit={{ opacity: 0, transition: { duration: 0.17, ease: EASE_IN } }}
                 className="rounded-lg border border-azure/40 bg-azure/10 px-4 py-3 text-sm text-frost"
               >
-                Mensagem enviada. Respondo assim que der — normalmente no mesmo dia.
+                {c.sent}
               </motion.p>
             )}
             {status === "error" && (
@@ -226,7 +229,7 @@ export default function Contact() {
                 exit={{ opacity: 0, transition: { duration: 0.17, ease: EASE_IN } }}
                 className="rounded-lg border border-red-400/40 bg-red-400/10 px-4 py-3 text-sm text-red-200"
               >
-                Algo falhou no envio. Me chame direto em{" "}
+                {c.failed}{" "}
                 <a href={`mailto:${profile.email}`} className="link-wipe text-paper">
                   {profile.email}
                 </a>
@@ -238,14 +241,14 @@ export default function Contact() {
 
         <aside className="flex flex-col gap-8 lg:col-span-4 lg:col-start-9">
           <Reveal className="flex flex-col gap-2 border-t border-line pt-5">
-            <span className="label">Base</span>
-            <span className="text-sm text-paper">{profile.location}</span>
-            <span className="text-sm text-muted">Aberto a remoto e híbrido</span>
+            <span className="label">{c.baseLabel}</span>
+            <span className="text-sm text-paper">{t.location}</span>
+            <span className="text-sm text-muted">{c.remote}</span>
           </Reveal>
 
           <Reveal delay={0.05} className="flex flex-col gap-1 border-t border-line pt-5">
-            <span className="label mb-2">Canais</span>
-            {channels.map(({ href, label, handle, Icon }) => (
+            <span className="label mb-2">{c.channels}</span>
+            {channels(t.phone).map(({ href, label, handle, Icon }) => (
               <a
                 key={label}
                 href={href}

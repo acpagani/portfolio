@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { motion, useReducedMotion } from "motion/react";
 import { EASE_OUT, EASE_IN } from "../lib/motion";
 import { profile } from "../data/profile";
+import { useLang } from "../i18n/context";
 
 const panel = {
   hidden: { opacity: 0 },
@@ -28,6 +29,7 @@ const reducedLine = {
 export default function MobileMenu({ links, onClose, returnFocusTo }) {
   const panelRef = useRef(null);
   const reduce = useReducedMotion();
+  const { t } = useLang();
 
   // Focus moves in on open, is trapped while open, and returns to the trigger.
   useEffect(() => {
@@ -87,7 +89,7 @@ export default function MobileMenu({ links, onClose, returnFocusTo }) {
       ref={panelRef}
       role="dialog"
       aria-modal="true"
-      aria-label="Navegação"
+      aria-label={t.a11y.navDialog}
       variants={panel}
       initial="hidden"
       animate="show"
@@ -111,7 +113,7 @@ export default function MobileMenu({ links, onClose, returnFocusTo }) {
                 <span className="font-mono text-[0.65rem] text-muted">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                {l.label}
+                {t.nav[l.key]}
               </NavLink>
             </motion.li>
           ))}
@@ -119,7 +121,7 @@ export default function MobileMenu({ links, onClose, returnFocusTo }) {
       </nav>
 
       <motion.div variants={item} className="flex flex-col gap-2">
-        <span className="label">Direto</span>
+        <span className="label">{t.a11y.direct}</span>
         <a href={`mailto:${profile.email}`} className="link-wipe w-fit text-sm text-paper">
           {profile.email}
         </a>
@@ -129,7 +131,7 @@ export default function MobileMenu({ links, onClose, returnFocusTo }) {
           rel="noreferrer"
           className="link-wipe w-fit text-sm text-paper"
         >
-          {profile.phone}
+          {t.phone}
         </a>
       </motion.div>
     </motion.div>

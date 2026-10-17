@@ -3,38 +3,39 @@ import { motion, useReducedMotion } from "motion/react";
 import PageHeader from "../components/PageHeader";
 import ProjectCard from "../components/ProjectCard";
 import { EASE_OUT } from "../lib/motion";
-import projects from "../data/projects.json";
+import { useLang } from "../i18n/context";
+import { useProjects } from "../i18n/data";
 
-const FILTERS = ["Tudo", "Pessoal", "Acadêmico"];
-const SORTS = [
-  { id: "recent", label: "Recentes" },
-  { id: "az", label: "A–Z" },
-];
+// Filter values are the `kind` keys stored in projects.json; labels come from t.kinds.
+const FILTERS = ["all", "Pessoal", "Acadêmico"];
+const SORTS = ["recent", "az"];
 
 const layoutTransition = { duration: 0.35, ease: EASE_OUT };
 
 export default function Projects() {
-  const [filter, setFilter] = useState("Tudo");
+  const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("recent");
   const reduce = useReducedMotion();
+  const { t } = useLang();
+  const projects = useProjects();
 
   const visible = useMemo(() => {
-    const list = projects.filter((p) => filter === "Tudo" || p.kind === filter);
+    const list = projects.filter((p) => filter === "all" || p.kind === filter);
     return sort === "az"
-      ? [...list].sort((a, b) => a.name.localeCompare(b.name, "pt-BR"))
+      ? [...list].sort((a, b) => a.name.localeCompare(b.name, t.locale))
       : [...list].sort((a, b) => Number(b.year) - Number(a.year) || b.id - a.id);
-  }, [filter, sort]);
+  }, [projects, filter, sort, t.locale]);
 
   return (
     <>
       <PageHeader
         id="projetos-title"
-        kicker="Projetos"
-        title="O que eu já construí"
-        lede="Projetos entre faculdade, Harvard e madrugadas próprias. Alguns viraram produto, outros viraram lição. Os dois estão aqui."
+        kicker={t.projects.kicker}
+        title={t.projects.title}
+        lede={t.projects.lede}
       >
         <div className="flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar por origem">
+          <div className="flex flex-wrap gap-1.5" role="group" aria-label={t.projects.filterGroup}>
             {FILTERS.map((f) => {
               const active = f === filter;
               return (
@@ -54,22 +55,22 @@ export default function Projects() {
                       transition={{ type: "spring", stiffness: 420, damping: 34 }}
                     />
                   )}
-                  {f}
+                  {f === "all" ? t.projects.all : t.kinds[f]}
                 </button>
               );
             })}
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="label">Ordem</span>
-            <div className="flex gap-1.5" role="group" aria-label="Ordenar projetos">
+            <span className="label">{t.projects.sortLabel}</span>
+            <div className="flex gap-1.5" role="group" aria-label={t.projects.sortGroup}>
               {SORTS.map((s) => {
-                const active = s.id === sort;
+                const active = s === sort;
                 return (
                   <button
-                    key={s.id}
+                    key={s}
                     type="button"
-                    onClick={() => setSort(s.id)}
+                    onClick={() => setSort(s)}
                     aria-pressed={active}
                     className={`rounded-full border px-3.5 py-1.5 font-mono text-[0.65rem] uppercase tracking-label transition-colors duration-150 ${
                       active
@@ -77,7 +78,7 @@ export default function Projects() {
                         : "border-line text-muted hover:border-lineStrong hover:text-paper"
                     }`}
                   >
-                    {s.label}
+                    {t.projects.sorts[s]}
                   </button>
                 );
               })}
@@ -87,9 +88,9 @@ export default function Projects() {
       </PageHeader>
 
       <div className="shell pb-10">
-        <h2 className="sr-only">Lista de projetos</h2>
+        <h2 className="sr-only">{t.projects.listTitle}</h2>
         <p aria-live="polite" className="sr-only">
-          {visible.length === 1 ? "1 projeto exibido" : `${visible.length} projetos exibidos`}
+          {t.projects.count(visible.length)}
         </p>
 
         {/* `layout` on the items is what makes re-sorting travel instead of
@@ -117,7 +118,7 @@ export default function Projects() {
 
         {visible.length === 0 && (
           <p className="py-16 text-center text-sm text-muted">
-            Nada por aqui com esse filtro.
+            {t.projects.empty}
           </p>
         )}
       </div>

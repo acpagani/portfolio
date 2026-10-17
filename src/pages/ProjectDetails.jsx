@@ -5,11 +5,14 @@ import Gallery from "../components/Gallery";
 import ProjectCover from "../components/ProjectCover";
 import SkillChip from "../components/SkillChip";
 import Reveal from "../components/Reveal";
-import projects from "../data/projects.json";
-import skills from "../data/skills.json";
+import { useLang } from "../i18n/context";
+import { useProjects, useSkills } from "../i18n/data";
 
 export default function ProjectDetails() {
   const { id } = useParams();
+  const { t } = useLang();
+  const projects = useProjects();
+  const skills = useSkills();
   const idx = projects.findIndex((p) => String(p.id) === String(id));
 
   if (idx === -1) return <Navigate to="/projects" replace />;
@@ -31,13 +34,13 @@ export default function ProjectDetails() {
             aria-hidden="true"
             className="h-4 w-4 transition-transform duration-150 ease-out4 group-hover:-translate-x-1"
           />
-          Projetos
+          {t.common.projects}
         </Link>
       </div>
 
       <header className="shell flex flex-col gap-6 pb-10">
         <Reveal className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[0.65rem] uppercase tracking-label text-muted">
-          <span className="text-azure">{project.kind}</span>
+          <span className="text-azure">{t.kinds[project.kind]}</span>
           <span aria-hidden="true" className="h-px w-6 bg-lineStrong" />
           <span>{project.year}</span>
           <span aria-hidden="true" className="h-px w-6 bg-lineStrong" />
@@ -73,7 +76,7 @@ export default function ProjectDetails() {
 
       <div className="shell grid gap-14 pt-16 lg:grid-cols-12 lg:gap-16">
         <div className="flex flex-col gap-6 lg:col-span-7">
-          <h2 className="label">Sobre o projeto</h2>
+          <h2 className="label">{t.project.about}</h2>
           {/* Descrições longas podem quebrar em parágrafos com "\n\n"; as de
               um bloco só continuam saindo como um único <p>. */}
           <div className="flex max-w-prose flex-col gap-4">
@@ -92,7 +95,7 @@ export default function ProjectDetails() {
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2.5 rounded-full bg-azure px-6 py-3 font-mono text-[0.7rem] uppercase tracking-label text-ink transition-[transform,background-color] duration-150 ease-out4 [@media(hover:hover)]:hover:-translate-y-px [@media(hover:hover)]:hover:bg-frost active:scale-[0.97]"
               >
-                Ver ao vivo
+                {t.project.live}
                 <GoArrowUpRight aria-hidden="true" className="h-4 w-4" />
               </a>
             )}
@@ -104,7 +107,7 @@ export default function ProjectDetails() {
                 className="inline-flex items-center gap-2.5 rounded-full border border-lineStrong px-6 py-3 font-mono text-[0.7rem] uppercase tracking-label text-paper transition-[transform,color,border-color] duration-150 ease-out4 [@media(hover:hover)]:hover:-translate-y-px [@media(hover:hover)]:hover:border-azure [@media(hover:hover)]:hover:text-azure active:scale-[0.97]"
               >
                 <FaGithub aria-hidden="true" className="h-4 w-4" />
-                Código
+                {t.project.code}
               </a>
             )}
           </div>
@@ -112,7 +115,7 @@ export default function ProjectDetails() {
 
         <aside className="flex flex-col gap-8 lg:col-span-4 lg:col-start-9">
           <div className="flex flex-col gap-3 border-t border-line pt-5">
-            <span className="label">Contexto</span>
+            <span className="label">{t.project.context}</span>
             <div className="flex items-center gap-3">
               {project.institutionImage && (
                 <img
@@ -129,7 +132,7 @@ export default function ProjectDetails() {
           </div>
 
           <div className="flex flex-col gap-3 border-t border-line pt-5">
-            <span className="label">Tecnologias</span>
+            <span className="label">{t.project.tech}</span>
             <ul className="grid grid-cols-2 gap-2">
               {project.skills.map((sid) => {
                 const s = skills.find((x) => x.id === sid);
@@ -156,13 +159,13 @@ export default function ProjectDetails() {
         </aside>
       </div>
 
-      <nav className="shell pt-24" aria-label="Próximo projeto">
+      <nav className="shell pt-24" aria-label={t.project.nextNav}>
         <Link
           to={`/projects/${next.id}`}
           className="lift group flex items-center justify-between gap-6 rounded-xl border border-line bg-panel/50 p-7"
         >
           <span className="flex flex-col gap-2">
-            <span className="label">Próximo</span>
+            <span className="label">{t.project.next}</span>
             <span className="font-display text-3xl leading-none text-paper">{next.name}</span>
           </span>
           <GoArrowUpRight
